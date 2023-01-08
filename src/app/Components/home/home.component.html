@@ -1,7 +1,7 @@
 <table
-  class="w-3/4 m-auto border-collapse border-b-2 border-b-sky-300 text-center mt-20 shadow-xl"
+  class="w-3/4 m-auto border-collapse border-b-2 border-b-sky-300 text-center mt-20 shadow-xl dark:border-b-green-300"
 >
-  <thead class="bg-sky-200 text-gray-50 text-lg p-200">
+  <thead class="bg-sky-200 text-gray-50 text-lg p-200 dark:bg-emerald-500">
     <tr>
       <th rowspan="2" class="border py-5">ID</th>
       <th rowspan="2" class="border">Name</th>
@@ -18,7 +18,7 @@
   <tbody *ngIf="students">
     <tr
       *ngFor="let s of students"
-      class="odd:bg-neutral-100 hover:bg-gray-400 transition-all"
+      class="odd:bg-neutral-100 hover:bg-gray-400 transition-all dark:odd:bg-neutral-600 dark:text-slate-100 dark:hover:bg-stone-500"
     >
       <td class="table-info" routerLink="/users/{{ s.id }}">
         {{ s.id }}

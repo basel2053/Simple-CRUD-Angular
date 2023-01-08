@@ -10,6 +10,14 @@ import { ActivatedRoute } from '@angular/router';
 export class UserDetailsComponent implements OnInit {
   student: any;
   ID = 0;
+  randomColor: string[] | string = [
+    'amber',
+    'emerald',
+    'sky',
+    'indigo',
+    'teal',
+    'purple',
+  ];
   constructor(
     private clientService: ApiService,
     myActiveRoute: ActivatedRoute
@@ -17,6 +25,8 @@ export class UserDetailsComponent implements OnInit {
     this.ID = myActiveRoute.snapshot.params['id'];
   }
   ngOnInit(): void {
+    this.randomColor =
+      this.randomColor[Math.floor(Math.random() * this.randomColor.length)];
     this.clientService.getUser(this.ID).subscribe({
       next: (res) => {
         this.student = res;
