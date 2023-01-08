@@ -1,0 +1,74 @@
+<div>
+  <form [formGroup]="validationForm">
+    <div>
+      <label for="name">Name</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        class="shadow"
+        formControlName="name"
+        placeholder="John Doe..."
+      />
+    </div>
+    <div>
+      <label for="email">E-mail</label>
+      <input
+        type="text"
+        name="email"
+        id="email"
+        class="shadow"
+        formControlName="email"
+        placeholder="johndoe@gmail.com"
+      />
+    </div>
+    <div>
+      <label for="age">Age</label>
+      <input
+        type="number"
+        name="age"
+        id="age"
+        class="shadow"
+        formControlName="age"
+        placeholder="your age..."
+      />
+    </div>
+
+    <div>
+      <label for="city">City</label>
+      <input
+        type="text"
+        name="city"
+        id="city"
+        class="shadow"
+        formControlName="city"
+        placeholder="City*"
+      />
+    </div>
+    <div>
+      <label for="blockNo">Block Number</label>
+      <input
+        type="number"
+        name="blockNo"
+        id="blockNo"
+        class="shadow"
+        formControlName="blockNo"
+        placeholder="Block number..."
+      />
+    </div>
+    <div>
+      <label for="phone">Phone</label>
+      <input
+        type="text"
+        name="phone"
+        id="phone"
+        class="shadow"
+        formControlName="phone"
+        placeholder="+20 123456"
+      />
+    </div>
+    <div>
+      <button (click)="addUser()" routerLink="/">Add User</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,52 @@
+<table class="w-3/4 m-auto border border-collapse text-center">
+  <thead>
+    <tr>
+      <th rowspan="2" class="border">ID</th>
+      <th rowspan="2" class="border">Name</th>
+      <th colspan="2" class="border">Address</th>
+      <th rowspan="2" class="border">Age</th>
+      <th rowspan="2" class="border">Update</th>
+      <th rowspan="2" class="border">Delete</th>
+    </tr>
+    <tr>
+      <th class="border">City</th>
+      <th class="border">Block No.</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="students">
+    <tr
+      *ngFor="let s of students"
+      class="odd:bg-neutral-100 hover:bg-gray-400 transition-all"
+    >
+      <td class="table-info" routerLink="/users/{{ s.id }}">
+        {{ s.id }}
+      </td>
+      <td class="table-info" routerLink="/users/{{ s.id }}">
+        {{ s.name }}
+      </td>
+      <td class="table-info" routerLink="/users/{{ s.id }}">
+        {{ s.address.city }}
+      </td>
+      <td class="table-info" routerLink="/users/{{ s.id }}">
+        {{ s.address.blockNo }}
+      </td>
+      <td class="table-info" routerLink="/users/{{ s.id }}">
+        {{ s.age }}
+      </td>
+      <td class="border">
+        <a routerLink="/edit-user/{{ s.id }}" class="text-amber-500"
+          ><i class="far fa-edit mx-2"></i
+        ></a>
+      </td>
+      <td class="border">
+        <button
+          type="button"
+          class="text-red-500"
+          (click)="deleteUser($event, s.name, s.id)"
+        >
+          <i class="far fa-trash-alt mx-2"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

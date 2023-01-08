@@ -1,0 +1,70 @@
+{
+  "users": [
+    {
+      "name": "Bassel",
+      "email": "bassel@gmail.com",
+      "age": 23,
+      "address": {
+        "city": "Port Said",
+        "blockNo": 10
+      },
+      "phone": "011111",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Tamer",
+      "age": 20,
+      "email": "tamer@gmail.com",
+      "address": {
+        "city": "Cairo",
+        "blockNo": 20
+      },
+      "phone": "022222"
+    },
+    {
+      "id": 3,
+      "name": "Sama",
+      "age": 25,
+      "email": "sama@gmail.com",
+      "address": {
+        "city": "Alexandria",
+        "blockNo": 30
+      },
+      "phone": "033333"
+    },
+    {
+      "id": 4,
+      "name": "Nada",
+      "age": 24,
+      "email": "nada@gmail.com",
+      "address": {
+        "city": "Ismailia",
+        "blockNo": 40
+      },
+      "phone": "044444"
+    },
+    {
+      "id": 5,
+      "name": "Samy",
+      "age": 27,
+      "email": "samy@gmail.com",
+      "address": {
+        "city": "Cairo",
+        "blockNo": 50
+      },
+      "phone": "055555"
+    },
+    {
+      "name": "john",
+      "email": "john@gmail.com",
+      "age": 29,
+      "address": {
+        "city": "London",
+        "blockNo": 60
+      },
+      "phone": "077777",
+      "id": 6
+    }
+  ]
+}
