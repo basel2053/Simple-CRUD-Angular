@@ -4,8 +4,11 @@ import { Component } from '@angular/core';
   selector: 'app-error',
   templateUrl: './error.component.html',
   styles: [
-  ]
+    `
+      .img-container {
+        text-align: -webkit-center;
+      }
+    `,
+  ],
 })
-export class ErrorComponent {
-
-}
+export class ErrorComponent {}

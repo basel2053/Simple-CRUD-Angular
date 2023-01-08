@@ -1,74 +1,85 @@
-<div>
-  <form [formGroup]="validationForm">
-    <div>
-      <label for="name">Name</label>
+<div class="w-2/3 m-auto shadow-xl rounded-md mt-14">
+  <div class="mb-6 bg-neutral-800 text-gray-200 rounded-md py-4">
+    <h2 class="text-3xl font-bold text-center uppercase">Add User Form</h2>
+  </div>
+  <form [formGroup]="validationForm" class="py-8 px-[10%]">
+    <div class="">
+      <label for="name" class="font-bold block text-lg mb-2">Name</label>
       <input
         type="text"
         name="name"
         id="name"
-        class="shadow"
+        class="shadow text-gray-600 text-base font-medium rounded focus:outline-none w-full px-3 py-2 mb-4"
         formControlName="name"
         placeholder="John Doe..."
       />
     </div>
-    <div>
-      <label for="email">E-mail</label>
-      <input
-        type="text"
-        name="email"
-        id="email"
-        class="shadow"
-        formControlName="email"
-        placeholder="johndoe@gmail.com"
-      />
+    <div
+      class="flex justify-between gap-10 border-b-2 border-b-rose-200 mb-8 pb-6"
+    >
+      <div class="w-1/2">
+        <label for="email" class="font-bold block text-lg mb-2">E-mail</label>
+        <input
+          type="text"
+          name="email"
+          id="email"
+          class="shadow text-gray-600 text-base font-medium rounded focus:outline-none w-full px-3 py-2 mb-4"
+          formControlName="email"
+          placeholder="johndoe@gmail.com"
+        />
+      </div>
+      <div class="w-1/2">
+        <label for="age" class="font-bold block text-lg mb-2">Age</label>
+        <input
+          type="number"
+          name="age"
+          id="age"
+          class="shadow text-gray-600 text-base font-medium rounded focus:outline-none w-full px-3 py-2 mb-4"
+          formControlName="age"
+          placeholder="your age..."
+        />
+      </div>
     </div>
-    <div>
-      <label for="age">Age</label>
-      <input
-        type="number"
-        name="age"
-        id="age"
-        class="shadow"
-        formControlName="age"
-        placeholder="your age..."
-      />
-    </div>
-
-    <div>
-      <label for="city">City</label>
+    <h2 class="font-bold block text-lg mb-2">Address</h2>
+    <div
+      class="flex justify-between gap-10 border-b-2 border-b-sky-200 mb-8 pb-6"
+    >
       <input
         type="text"
         name="city"
         id="city"
-        class="shadow"
+        class="shadow text-gray-600 text-base font-medium rounded focus:outline-none w-full px-3 py-2 mb-4"
         formControlName="city"
-        placeholder="City*"
+        placeholder="City.."
       />
-    </div>
-    <div>
-      <label for="blockNo">Block Number</label>
       <input
         type="number"
         name="blockNo"
         id="blockNo"
-        class="shadow"
+        class="shadow text-gray-600 text-base font-medium rounded focus:outline-none w-full px-3 py-2 mb-4"
         formControlName="blockNo"
-        placeholder="Block number..."
+        placeholder="Block Number..."
       />
     </div>
-    <div>
-      <label for="phone">Phone</label>
+    <div class="">
+      <label for="phone" class="font-bold block text-lg mb-3">Phone</label>
       <input
         type="text"
         name="phone"
         id="phone"
-        class="shadow"
+        class="shadow text-gray-600 text-base font-medium rounded focus:outline-none w-full px-3 py-2 mb-4"
         formControlName="phone"
         placeholder="+20 123456"
       />
     </div>
-    <div>
-      <button (click)="addUser()" routerLink="/">Add User</button>
+    <div class="text-center mt-10 mb-6 shadow-lg">
+      <button
+        (click)="addUser()"
+        routerLink="/"
+        class="bg-sky-400 py-2 w-full text-white rounded hover:bg-sky-500 transition-all font-bold text-xl"
+      >
+        {{ student ? "Update User" : "Add User" }}
+      </button>
     </div>
   </form>
 </div>
