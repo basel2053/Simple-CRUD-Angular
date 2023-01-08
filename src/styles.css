@@ -4,6 +4,6 @@
 
 @layer components {
   .table-info {
-    @apply border cursor-pointer;
+    @apply border cursor-pointer font-medium p-3;
   }
 }

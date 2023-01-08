@@ -1,19 +1,31 @@
-<div class="flex justify-between items-center px-[12%] bg-rose-500 h-20 w-full">
-  <h1 class="text-3xl text-white font-bold">Angular Users</h1>
-  <ul class="flex gap-8">
+<div
+  class="flex justify-between items-center px-[12%] bg-rose-500 h-20 w-full shadow-lg dark:bg-zinc-700"
+>
+  <h1 class="text-3xl text-white font-bold dark:text-gray-200">
+    Angular Users
+  </h1>
+  <ul class="flex gap-8 items-center">
     <li>
       <a
         routerLink="/"
-        class="bg-gray-700 rounded py-2 px-5 font-bold hover:bg-gray-900 transition-all text-white"
+        class="bg-gray-700 rounded py-2 px-5 font-bold hover:bg-gray-900 transition-all text-white dark:bg-emerald-500 dark:hover:bg-emerald-600"
         >Home</a
       >
     </li>
     <li>
       <a
         routerLink="/add-user"
-        class="bg-gray-700 rounded py-2 px-5 font-bold hover:bg-gray-900 transition-all text-white"
+        class="bg-gray-700 rounded py-2 px-5 font-bold hover:bg-gray-900 transition-all text-white dark:bg-emerald-500 dark:hover:bg-emerald-600"
         >Add User</a
       >
+    </li>
+    <li>
+      <button
+        class="bg-gray-700 rounded py-2 px-5 font-bold hover:bg-gray-900 transition-all text-white dark:bg-emerald-500 dark:hover:bg-emerald-600"
+        (click)="changeTheme()"
+      >
+        Mode
+      </button>
     </li>
   </ul>
 </div>
