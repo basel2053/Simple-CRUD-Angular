@@ -3,7 +3,7 @@
     {
       "name": "Bassel",
       "email": "bassel@gmail.com",
-      "age": 23,
+      "age": 24,
       "address": {
         "city": "Port Said",
         "blockNo": 10
@@ -56,14 +56,14 @@
       "phone": "055555"
     },
     {
-      "name": "john",
-      "email": "john@gmail.com",
-      "age": 29,
+      "name": "John",
+      "email": "John@gmail.com",
+      "age": 42,
       "address": {
-        "city": "London",
-        "blockNo": 60
+        "city": "Leeds",
+        "blockNo": 21
       },
-      "phone": "077777",
+      "phone": "017655",
       "id": 6
     }
   ]

@@ -10,17 +10,35 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AddUserComponent implements OnInit {
   ID = 0;
-  student: any;
+  user: any;
   constructor(
     private clientService: ApiService,
     myActiveRoute: ActivatedRoute
   ) {
     this.ID = myActiveRoute.snapshot.params['id'];
   }
+
+  get validName() {
+    return this.validationForm.controls['name'].valid;
+  }
+  get validAge() {
+    return this.validationForm.controls['age'].valid;
+  }
+  get validEmail() {
+    return this.validationForm.controls['email'].valid;
+  }
+
   validationForm = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    age: new FormControl('', []),
-    email: new FormControl('', []),
+    name: new FormControl('', [Validators.minLength(4), Validators.required]),
+    age: new FormControl('', [
+      Validators.min(20),
+      Validators.max(40),
+      Validators.required,
+    ]),
+    email: new FormControl('', [
+      Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+      Validators.required,
+    ]),
     city: new FormControl('', []),
     blockNo: new FormControl('', []),
     phone: new FormControl('', []),
@@ -30,14 +48,24 @@ export class AddUserComponent implements OnInit {
     if (this.ID) {
       this.clientService.getUser(this.ID).subscribe({
         next: (res) => {
-          this.student = res;
+          this.user = res;
           this.validationForm = new FormGroup({
-            name: new FormControl(this.student.name, [Validators.required]),
-            age: new FormControl(this.student.age, []),
-            email: new FormControl(this.student.email, []),
-            city: new FormControl(this.student.address.city, []),
-            blockNo: new FormControl(this.student.address.blockNo, []),
-            phone: new FormControl(this.student.phone, []),
+            name: new FormControl(this.user.name, [
+              Validators.minLength(4),
+              Validators.required,
+            ]),
+            age: new FormControl(this.user.age, [
+              Validators.min(20),
+              Validators.max(40),
+              Validators.required,
+            ]),
+            email: new FormControl(this.user.email, [
+              Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+              Validators.required,
+            ]),
+            city: new FormControl(this.user.address.city, []),
+            blockNo: new FormControl(this.user.address.blockNo, []),
+            phone: new FormControl(this.user.phone, []),
           });
         },
         error(err) {
@@ -58,7 +86,7 @@ export class AddUserComponent implements OnInit {
       },
       phone: this.validationForm.value.phone,
     };
-    if (this.student) {
+    if (this.user) {
       this.clientService.updateUser(this.ID, user).subscribe();
       return;
     }
